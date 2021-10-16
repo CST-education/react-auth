@@ -1,0 +1,55 @@
+html,
+body,
+#root {
+  height: 100%;
+}
+body,
+#root {
+  display: flex;
+  flex-direction: column;
+}
+header,
+footer {
+  flex: 0 0 auto;
+}
+main {
+  flex: 1 0 auto;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .app-logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.app-header,
+.app-footer {
+  background-color: #282c34;
+  min-height: 10vh;
+  width: 100vw;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: calc(10px + 2vmin);
+  color: black;
+}
+.logo-wrapper {
+  display: flex;
+}
+.nav ul {
+  display: flex;
+}
+.nav ul li {
+  list-style: none;
+}
+.nav ul li:not(:last-child) {
+  margin-right: 2vmin;
+}
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
