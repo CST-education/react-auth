@@ -1,4 +1,4 @@
-import { Suspense, lazy } from 'react'
+import { Suspense, lazy, useCallback } from 'react'
 import { NavLink } from 'react-router-dom'
 import { Switch, Route } from 'react-router-dom'
 import './App.css'
@@ -10,6 +10,10 @@ const Login = lazy(() => import('./pages/LoginPage/LoginPage'))
 const NotFound = lazy(() => import('./pages/NotFound/NotFoundPage'))
 
 function App() {
+  const isAuth = true
+  const logout = useCallback(() => {
+    console.log(`logout`)
+  }, [])
   return (
     <>
       <header className="app-header">
@@ -23,10 +27,18 @@ function App() {
               <NavLink to="/">home</NavLink>
             </li>
             <li>
-              <NavLink to="/register">register</NavLink>
-            </li>
-            <li>
-              <NavLink to="/login">login</NavLink>
+              {isAuth ? (
+                <button onClick={logout}>logout</button>
+              ) : (
+                <ul>
+                  <li>
+                    <NavLink to="/register">register</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/login">login</NavLink>
+                  </li>
+                </ul>
+              )}
             </li>
           </ul>
         </nav>
