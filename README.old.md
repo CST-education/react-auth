@@ -1,7 +1,7 @@
 # react-auth
 
 Устанавливаем
-npm install react-router-dom formik @mui/material @emotion/react @emotion/styled
+npm install react-router-dom formik @mui/material @emotion/react @emotion/styled @mui/icons-material
 
 1. Создаем компоненты форм регистрации и логинизации
 2. Создаем компоненты страниц регистрации и логинизации, куда встраиваем компоненты их форм
